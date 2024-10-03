@@ -4,7 +4,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import logo from "../../assets/logo/logo.webp"
+import logo from "../../assets/logo/logo-nobg.png"
 import { OTP_ACTION, Resend_Otp_verify } from "../../actions/AuthActions";  
 
 const OtpPage = () => {
@@ -72,7 +72,7 @@ const OtpPage = () => {
     <div className="w-full h-screen flex items-center justify-center">
          <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
       <div className="w-1/2 hidden lgl:inline-flex h-full text-primeColor">
-        <div className="w-[450px] h-full bg-[#bbe6b9] px-10 flex flex-col gap-6 justify-center">
+        <div className="w-[450px] h-full bg-primeColor bg-opacity-20 px-10 flex flex-col gap-6 justify-center">
           <Link to="/">
             <img src={logo} alt="logoImg" className="w-28" />
           </Link>
@@ -83,55 +83,52 @@ const OtpPage = () => {
             <p className="text-base">Enter your otp here...</p>
           </div>
           <div className="w-[300px] flex items-start gap-3">
-            <span className="text-green-500 mt-1">
+            <span className="text-primeColor mt-1">
               <BsCheckCircleFill />
             </span>
             <p className="text-base text-primeColor">
               <span className="text-primeColor font-semibold font-titleFont">
-                Get started fast with FRESH BELLS
+              Get Started Fast with VITIS
               </span>
               <br />
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab omnis
-              nisi dolor recusandae consectetur!
+              Explore a wide range of healthcare and general trading products to begin your journey to better health and wellness.
             </p>
           </div>
           <div className="w-[300px] flex items-start gap-3">
-            <span className="text-green-500 mt-1">
+            <span className="text-primeColor mt-1">
               <BsCheckCircleFill />
             </span>
             <p className="text-base text-primeColor">
               <span className="text-primeColor font-semibold font-titleFont">
-                Access all FRESH BELLS services
+              Access All VITIS Services
               </span>
               <br />
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab omnis
-              nisi dolor recusandae consectetur!
+              Enjoy exclusive deals, personalized product recommendations, and a seamless shopping experience with Vitis.
             </p>
           </div>
           <div className="w-[300px] flex items-start gap-3">
-            <span className="text-green-500 mt-1">
+            <span className="text-primeColor mt-1">
               <BsCheckCircleFill />
             </span>
             <p className="text-base text-primeColor">
               <span className="text-primeColor font-semibold font-titleFont">
-                Trusted by online Shoppers
+              Trusted by Online Shoppers
               </span>
               <br />
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab omnis
-              nisi dolor recusandae consectetur!
+              Join thousands of satisfied customers who trust Vitis for their healthcare and general product needs.
             </p>
           </div>
           <div className="flex items-center justify-between mt-10">
-            <p className="text-sm font-titleFont font-semibold text-primeColor hover:text-white cursor-pointer duration-300">
-              © FRESH BELLS
+            <p className="text-sm font-titleFont font-semibold text-primeColor hover:text-black cursor-pointer duration-300">
+              © VITIS ENTERPRISES
             </p>
-            <p className="text-sm font-titleFont font-semibold text-primeColor hover:text-white cursor-pointer duration-300">
+            <p className="text-sm font-titleFont font-semibold text-primeColor hover:text-black cursor-pointer duration-300">
               Terms
             </p>
-            <p className="text-sm font-titleFont font-semibold text-primeColor hover:text-white cursor-pointer duration-300">
+            <p className="text-sm font-titleFont font-semibold text-primeColor hover:text-black cursor-pointer duration-300">
               Privacy
             </p>
-            <p className="text-sm font-titleFont font-semibold text-primeColor hover:text-white cursor-pointer duration-300">
+            <p className="text-sm font-titleFont font-semibold text-primeColor hover:text-black cursor-pointer duration-300">
               Security
             </p>
           </div>

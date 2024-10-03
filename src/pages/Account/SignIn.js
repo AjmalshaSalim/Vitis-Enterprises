@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import logo from "../../assets/logo/logo.webp"
+import logo from "../../assets/logo/logo-nobg.png"
 import { LOGIN_ACTION } from "../../actions/AuthActions";
 import { AddCart } from "../../actions/CartActions";
 
@@ -67,7 +67,7 @@ const SignIn = () => {
     <div className="w-full h-screen flex items-center justify-center font-body3">
       <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
       <div className="w-1/2 hidden lgl:inline-flex h-full text-primeColor">
-        <div className="w-[450px] h-full bg-[#bbe6b9] px-10 flex flex-col gap-6 justify-center">
+        <div className="w-[450px] h-full bg-primeColor bg-opacity-20 px-10 flex flex-col gap-6 justify-center">
           <Link to="/">
             <img loading="lazy" src={logo} alt="logoImg" className="w-28" />
           </Link>
@@ -78,52 +78,52 @@ const SignIn = () => {
             <p className="text-base">Enter your credentials</p>
           </div>
           <div className="w-[300px] flex items-start gap-3">
-            <span className="text-green-500 mt-1">
+            <span className="text-primeColor mt-1">
               <BsCheckCircleFill />
             </span>
             <p className="text-base text-primeColor">
               <span className="text-primeColor font-semibold font-titleFont">
-                Get started fast with FRESH BELLS
+              Get Started Fast with VITIS
               </span>
               <br />
-              Discover a wide variety of organic millets and healthy products to kickstart your wellness journey.
+              Explore a wide range of healthcare and general trading products to begin your journey to better health and wellness.
             </p>
           </div>
           <div className="w-[300px] flex items-start gap-3">
-            <span className="text-green-500 mt-1">
+            <span className="text-primeColor mt-1">
               <BsCheckCircleFill />
             </span>
             <p className="text-base text-primeColor">
               <span className="text-primeColor font-semibold font-titleFont">
-                Access all FRESH BELLS services
+              Access All VITIS Services
               </span>
               <br />
-              Enjoy exclusive deals, personalized recommendations, and seamless shopping experience with FRESH BELLS.
+              Enjoy exclusive deals, personalized product recommendations, and a seamless shopping experience with Vitis.
             </p>
           </div>
           <div className="w-[300px] flex items-start gap-3">
-            <span className="text-green-500 mt-1">
+            <span className="text-primeColor mt-1">
               <BsCheckCircleFill />
             </span>
             <p className="text-base text-primeColor">
               <span className="text-primeColor font-semibold font-titleFont">
-                Trusted by online Shoppers
+              Trusted by Online Shoppers
               </span>
               <br />
-              Join thousands of satisfied customers who trust FRESH BELLS for their organic and healthy food needs.
+              Join thousands of satisfied customers who trust Vitis for their healthcare and general product needs.
             </p>
           </div>
           <div className="flex items-center justify-between mt-10">
-            <p className="text-sm font-titleFont font-semibold text-primeColor hover:text-white cursor-pointer duration-300">
-              © FRESH BELLS
+            <p className="text-sm font-titleFont font-semibold text-primeColor hover:text-black cursor-pointer duration-300">
+              © VITIS ENTERPRISES
             </p>
-            <p className="text-sm font-titleFont font-semibold text-primeColor hover:text-white cursor-pointer duration-300">
+            <p className="text-sm font-titleFont font-semibold text-primeColor hover:text-black cursor-pointer duration-300">
               Terms
             </p>
-            <p className="text-sm font-titleFont font-semibold text-primeColor hover:text-white cursor-pointer duration-300">
+            <p className="text-sm font-titleFont font-semibold text-primeColor hover:text-black cursor-pointer duration-300">
               Privacy
             </p>
-            <p className="text-sm font-titleFont font-semibold text-primeColor hover:text-white cursor-pointer duration-300">
+            <p className="text-sm font-titleFont font-semibold text-primeColor hover:text-black cursor-pointer duration-300">
               Security
             </p>
           </div>
@@ -175,13 +175,13 @@ const SignIn = () => {
               >
                 {isLoading ? 'Loading...' : 'Sign In'}
               </button>
-              <Link to="/forgot-password" className="text-sm text-center font-titleFont font-medium hover:text-blue-600 duration-300">
+              <Link to="/forgot-password" className="text-sm text-center font-titleFont font-medium hover:text-primeColor duration-300">
                 Forgot Password?
               </Link>
               <p className="text-sm text-center font-titleFont font-medium">
                 Don't have an Account?{" "}
                 <Link to="/signup">
-                  <span className="hover:text-blue-600 duration-300">
+                  <span className="hover:text-primeColor duration-300">
                     Sign up
                   </span>
                 </Link>

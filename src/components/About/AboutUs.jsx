@@ -3,7 +3,6 @@ import { IoStarHalf } from "react-icons/io5";
 import { GiPoisonBottle } from "react-icons/gi";
 import { AiFillSafetyCertificate } from "react-icons/ai";
 import { RiSecurePaymentLine } from "react-icons/ri";
-import Lottie from 'lottie-react';
 
 export default function AboutUs() {
     return (

@@ -64,7 +64,7 @@ const Services = () => {
               >
                
                 <div className="flex justify-center mt-8 h-40 w-full items-center text-primeColor mx-auto transform group-hover:scale-105 group-hover:rotate-6 duration-300 overflow-hidden">
-                  <img src={service.img} className="w-2/3" />
+                  <img src={service.img} alt="img" className="w-2/3" />
                 </div>
                 <div className="text-center mt-2">
                   <h1 className="text-2xl z-30 font-body3 px-4 font-medium text-black transform group-hover:translate-z-10 duration-300">{service.name}</h1>

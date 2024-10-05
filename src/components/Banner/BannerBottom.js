@@ -1,9 +1,6 @@
 import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import mom from "../../assets/images/New folder/b1.jpg"
-import gym from "../../assets/images/New folder/b2.jpg"
-import dr from "../../assets/images/New folder/b3.jpg"
 import Heading from "../home/Products/Heading";
 import { useSelector } from "react-redux";
 import placehold from "../../assets/images/placeholderimage.jpg"

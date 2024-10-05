@@ -1,8 +1,6 @@
 import React from 'react'
 import bggain from "../../../assets/images/banner/Mini-Banner-B.jpg"
 import { AiOutlineArrowRight } from 'react-icons/ai';
-import bush from "../../../assets/bg/24-7-Customer.png"
-import bush1 from "../../../assets/bg/24-7-Customer.png"
 import "./Offer.css"
 
 export default function Offer() {

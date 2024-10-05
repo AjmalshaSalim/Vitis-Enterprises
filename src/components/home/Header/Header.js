@@ -7,8 +7,6 @@ import logo1 from "../../../assets/logo/logo-nobg.png";
 import Image from "../../designLayouts/Image";
 import Flex from "../../designLayouts/Flex";
 import "./Header.css"
-import Lottie from "lottie-react";
-import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
 import { PincodeCheck } from "../../../actions/HomeActions"
 
 

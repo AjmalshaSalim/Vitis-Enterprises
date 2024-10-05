@@ -158,14 +158,14 @@ const ProductDetails = () => {
       <Header />
       <HeaderBottom />
       <ToastContainer />
-      <div className="bg-[#EFFDEC] font-body3">
+      <div className="bg-white font-body3">
         <div className="w-full mx-auto overflow-h">
           <div className="xl:container mx-auto px-4 py-7">
             <div className="xl:-mt-10 mb-4 -mt-7">
               <Breadcrumbs title="Product Details" />
             </div>
             <div className="max-w-full mx-auto my-10 ">
-              <div className="bg-white rounded-lg shadow-lg">
+              <div className="bg-white rounded-lg border">
                 <button className="icofont-close absolute top-2 right-2 text-gray-500 hover:text-gray-700" data-bs-dismiss="modal"></button>
                 <div className="p-6">
                   <div className="flex flex-col lg:flex-row items-center justify-center">
@@ -187,7 +187,7 @@ const ProductDetails = () => {
                       </div>
                     </div>
                     {/* Product Details */}
-                    <div className="w-full lg:w-1/2 lg:pl-6 mt-6 lg:mt-0 bg-yellow-50  p-5 font-body2">
+                    <div className="w-full lg:w-1/2 lg:pl-6 mt-6 lg:mt-0  p-5 font-body2">
                       <div className="flex flex-col items-start ">
                         <h3 className=" text-2xl font-bold mb-2">{data.product?.name}</h3>
                         <h3 className=" text-2xl font-bold mb-2 flex flex-row">
@@ -202,12 +202,12 @@ const ProductDetails = () => {
                           {data.product.in_stock === 0 ? "Out of Stock" : data.product.in_stock < 10 ? `Only ${data.product.in_stock} ${data.product.unit} items left` : `${data.product.in_stock}${data.product.unit} items in stock`}
                         </div>
                         <div className=" flex items-center gap-2 mb-4">
-                          <div className="flex items-center">
-                            <button onClick={() => handleDecrease(data.product)} className="px-3 py-3 text-lg bg-gray-300 hover:bg-red-400 text-black hover:text-white">
+                          <div className="flex items-center border p-2">
+                            <button onClick={() => handleDecrease(data.product)} className="px-3 py-3 text-lg bg-gray-300 hover:bg-primeColor text-black hover:text-white">
                               <BsDash />
                             </button>
-                            <span className="px-3 py-1 text-lg  bg-gray-100">{getCartQuantity(data.product?.id)}</span>
-                            <button onClick={() => handleIncrease(data.product)} className="px-3 py-3 text-lg bg-gray-300 hover:bg-green-400 text-black hover:text-white">
+                            <span className="px-3 py-1 text-lg ">{getCartQuantity(data.product?.id)}</span>
+                            <button onClick={() => handleIncrease(data.product)} className="px-3 py-3 text-lg bg-gray-300 hover:bg-primeColor text-black hover:text-white">
                               <BsPlus />
                             </button>
                           </div>
@@ -224,11 +224,9 @@ const ProductDetails = () => {
             </div>
             <div className="bg-white font-body2 shadow-xl p-8 text-xl">
               <div className="flex flex-col md:flex-row justify-around mb-4">
-                <button onClick={() => handleSectionClick('about')} className={`text-xl font-bold w-full md:w-auto bg-yellow-50 text-black text-center p-2 mb-2 border ${activeSection === 'about' ? 'bg-yellow-200 border-b-4 border-yellow-500' : ''}`}>About</button>
-                <button onClick={() => handleSectionClick('advantages')} className={`text-xl font-bold w-full md:w-auto bg-yellow-50 text-black text-center p-2 mb-2 border ${activeSection === 'advantages' ? 'bg-yellow-200 border-b-4 border-yellow-500' : ''}`}>Advantages</button>
-                <button onClick={() => handleSectionClick('health_benefits')} className={`text-xl font-bold w-full md:w-auto bg-yellow-50 text-black text-center p-2 mb-2 border ${activeSection === 'health_benefits' ? 'bg-yellow-200 border-b-4 border-yellow-500' : ''}`}>Health Benefits</button>
-                <button onClick={() => handleSectionClick('nutrition_contents')} className={`text-xl font-bold w-full md:w-auto bg-yellow-50 text-black text-center p-2 mb-2 border ${activeSection === 'nutrition_contents' ? 'bg-yellow-200 border-b-4 border-yellow-500' : ''}`}>Nutrition Contents</button>
-                <button onClick={() => handleSectionClick('usage')} className={`text-xl font-bold w-full md:w-auto bg-yellow-50 text-black text-center p-2 mb-2 border ${activeSection === 'usage' ? 'bg-yellow-200 border-b-4 border-yellow-500' : ''}`}>Usage</button>
+                <button onClick={() => handleSectionClick('about')} className={`text-ld font-bold w-full md:w-auto text-black text-center p-2 mb-2 border ${activeSection === 'about' ? 'bg-primeColor text-white' : ''}`}>About</button>
+                <button onClick={() => handleSectionClick('advantages')} className={`text-ld font-bold w-full md:w-auto text-black text-center p-2 mb-2 border ${activeSection === 'advantages' ? 'bg-primeColor text-white' : ''}`}>Advantages</button>
+                <button onClick={() => handleSectionClick('usage')} className={`text-ld font-bold w-full md:w-auto text-black text-center p-2 mb-2 border ${activeSection === 'usage' ? 'bg-primeColor text-white' : ''}`}>How to use</button>
               </div>
 
               {activeSection === 'about' && data.product.attributes?.about && (
@@ -349,7 +347,7 @@ const ProductDetails = () => {
                 previousLabel="< "
                 renderOnZeroPageCount={null}
                 containerClassName="pagination flex justify-center gap-1 items-center mt-5"
-                activeClassName="bg-black text-white px-2 py-2 rounded-full"
+                activeClassName="bg-black text-white px-2 py-2 "
                 pageLinkClassName="px-3 py-2 hover:bg-lightGray rounded"
               />
             </div>

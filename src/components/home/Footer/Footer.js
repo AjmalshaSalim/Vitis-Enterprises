@@ -32,7 +32,7 @@ const FooterLinks = [
 const Footer = () => {
   return (
     <div className="flex justify-center items-center w-full font-body3">
-      <div className="text-primeColor w-full bg-[#cfdee6]">
+      <div className="text-primeColor w-full bg-primeColor bg-opacity-20">
         <div className="flex w-full">
           <div  className="flex items-center justify-center pb-10 pt-5 w-full">
             {/* company details */}

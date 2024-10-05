@@ -23,12 +23,12 @@ export default function Navigation() {
     }, [location.pathname,menus]);
 
     return (
-        <div className="bg-[#bbe6b9] h-[70px] p-2 font-body3 rounded-t-xl font-abc fixed bottom-0 w-full z-50">
+        <div className="bg-white h-[70px] p-2 font-body3 rounded-t-xl font-abc fixed bottom-0 w-full z-50">
             <ul className="flex relative h-full">
                 {menus.map((menu, i) => (
                     <li key={i} className="w-full">
                         <Link to={menu.link} className="flex flex-col items-center justify-center text-center py-3 cursor-pointer" onClick={() => setActive(i)}>
-                            <span className={`text-3xl duration-500 ${i === active ? ' text-gray-700' : 'text-white'}`}>{menu.icon}</span>
+                            <span className={`text-3xl duration-500 ${i === active ? ' text-black' : 'text-primeColor'}`}>{menu.icon}</span>
                             <span className={`text-sm font-normal duration-700 ${active === i ? 'text-gray-700' : 'text-gray-700'}`}>{menu.name}</span>
                         </Link>
                     </li>

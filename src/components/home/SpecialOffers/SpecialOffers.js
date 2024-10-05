@@ -11,6 +11,7 @@ import { baseURL } from "../../../constants/index";
 import { AddCart } from "../../../actions/CartActions";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { LiaCartPlusSolid } from "react-icons/lia";
 
 const SpecialOffers = () => {
   const homeDetails = useSelector(state => state.auth.homeDetails);
@@ -109,19 +110,19 @@ const SpecialOffers = () => {
   return (
     <div className=" pb-20 lg:container">
       <ToastContainer />
-      <Heading heading="Healthy Delights" />
+      <Heading heading="Trending Products" />
       <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-1 font-body3" data-aos="fade-up">
         {homeDetails.healthy.slice(0, 10).map((product, index) => {
           const selectedVariant = selectedVariants[product.id] || product.quantity_variants[0];
           return (
             <div key={product.id} className="p-2 ">
-              <div className="relative overflow-hidden group w-full h-full hover:shadow-slate-700 shadow-xl">
-                <div className='flex flex-col items-center justify-center w-full h-auto bg-gray-100'>
-                  <div className="relative" onClick={() => handleView(product.id)}>
-                    <Image className="md:w-[230px] md:h-[230px] xs:w-[140px] xs:h-[140px] cursor-pointer object-contain" imgSrc={`${baseURL}${product.image}`} />
+              <div className="relative overflow-hidden rounded-lg border shadow-md group w-full h-full hover:shadow-xl ">
+                <div className='flex flex-col items-center justify-center w-full h-auto'>
+                  <div className="relative mt-4 md:w-[230px] md:h-[230px] xs:w-[140px] xs:h-[140px] overflow-hidden" onClick={() => handleView(product.id)}>
+                    <Image className=" cursor-pointer object-contain group-hover:scale-110 ease-in-out duration-500" imgSrc={`${baseURL}${product.image}`} />
                   </div>
                 </div>
-                <div className="py-1 flex flex-col gap-1 border-[1px] border-t-0 px-2 h-full bg-white group-hover:bg-yellow-100">
+                <div className="py-1 flex flex-col gap-1 px-2 h-full bg-white">
                   <div className="flex flex-col items-center justify-between font-titleFont ">
                     <h2 className="text-base xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl font-body3 text-primeColor font-bold">
                       {product.name}
@@ -138,7 +139,7 @@ const SpecialOffers = () => {
                     <select
                       key={index}
                       name="quantity"
-                      className="order-1 mt-1 hover:bg-primeColor font-body2 text-black hover:text-white xl:text-[20px] lg:text-[20px] md:text-[15px] xs:text-[15px] sm:text-[15px]"
+                      className="order-1 border px-2 rounded-md py-2 mt-1 hover:bg-primeColor font-body2 text-black hover:text-white xl:text-[20px] lg:text-[20px] md:text-[15px] xs:text-[15px] sm:text-[15px]"
                       onChange={(e) => handleVariantChange(product.id, product.quantity_variants.find(variant => variant.volume === parseInt(e.target.value)))}
                     >
                       {product.quantity_variants.map((ite, variantIndex) => (
@@ -151,20 +152,20 @@ const SpecialOffers = () => {
                         </option>
                       ))}
                     </select>
-                    <div className="flex items-center order-2">
-                      <button onClick={() => handleDecrease(product)} className="px-1 py-1 text-xs xs:text-xs sm:text-sm md:text-base lg:text-lg xl:text-lg bg-gray-300 hover:bg-red-400 text-black hover:text-white">
+                    <div className="flex items-center order-2 rounded-md border px-2 py-2">
+                      <button onClick={() => handleDecrease(product)} className="px-1 py-1 text-xs xs:text-xs sm:text-sm md:text-base lg:text-lg xl:text-lg bg-gray-300 hover:bg-primeColor text-black hover:text-white">
                         <BsDash />
                       </button>
                       <span className="px-1 text-xs xs:text-xs sm:text-sm md:text-base lg:text-lg xl:text-lg bg-gray-100">{getCartQuantity(product.id)}</span>
-                      <button onClick={() => handleIncrease(product)} className="px-1 py-1 text-xs xs:text-xs sm:text-sm md:text-base lg:text-lg xl:text-lg bg-gray-300 hover:bg-green-400 text-black hover:text-white">
+                      <button onClick={() => handleIncrease(product)} className="px-1 py-1 text-xs xs:text-xs sm:text-sm md:text-base lg:text-lg xl:text-lg bg-gray-300 hover:bg-primeColor text-black hover:text-white">
                         <BsPlus />
                       </button>
                     </div>
-                    <button onClick={() => handleBuy(product)} className="flex items-center order-3 font-body2 hover:bg-primeColor px-1 font-medium xs:text-[13px] sm:text-[15px] sml:text-[17px] md:text-[20px] lg:text-[20px] xl:text-[20px] text-black hover:text-white bg-white hover:translate-y-1 transition-transform duration-500">
-                      <span className="pl-1"><GiShoppingCart /></span>
+                    <button onClick={() => handleBuy(product)} className="flex items-center px-2 py-2 order-3 font-body2 hover:bg-primeColor border rounded-md font-medium xs:text-[13px] sm:text-[15px] sml:text-[17px] md:text-[20px] lg:text-[20px] xl:text-[20px] text-black hover:text-white bg-white transition-transform duration-500">
+                      <span className="pl-1"><LiaCartPlusSolid /></span>
                     </button>
                   </div>
-                  <div className={`md:text-lg lg:text-xl sm:text-sm font-normal text-center xs:text-[10px] ${selectedVariant?.in_stock <= 0 ? 'text-red-500' : selectedVariant?.in_stock > 0 && selectedVariant?.in_stock <= 10 ? 'text-yellow-500' : 'text-green-500'}`}>
+                  <div className={`md:text-lg lg:text-sm pb-5 pt-2 sm:text-sm font-normal text-center xs:text-[10px] ${selectedVariant?.in_stock <= 0 ? 'text-red-500' : selectedVariant?.in_stock > 0 && selectedVariant?.in_stock <= 10 ? 'text-yellow-500' : 'text-green-500'}`}>
                     {selectedVariant?.in_stock <= 0 ? "Out of Stock" : selectedVariant?.in_stock > 0 && selectedVariant?.in_stock <= 10 ? `Only ${selectedVariant?.in_stock} items left` : selectedVariant ? `${selectedVariant.in_stock} left in stock` : "Stock information not available"}
                   </div>
                 </div>

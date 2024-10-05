@@ -1,9 +1,9 @@
 import React from "react";
 import { Link} from "react-router-dom";
 import Slider from "react-slick";
-import Image1 from "../../assets/images/banner/banner-A.jpeg";
-import Image2 from "../../assets/images/banner/banner-B.jpeg";
-import Image3 from "../../assets/images/banner/banner-C.jpg";
+import Image1 from "../../assets/images/banner/Banners-A.jpg";
+import Image2 from "../../assets/images/banner/Banners-B.jpg";
+import Image3 from "../../assets/images/banner/Banners-C.jpg";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -58,7 +58,7 @@ const Banner = () => {
                 className="relative w-full h-[450px] sm:h-[300px] xs:h-[300px] md:h-[400px] bg-gray-300 lg:h-[500px] xl:h-[500px] bg-cover bg-center flex items-center justify-center"
                 style={{ backgroundImage: `url(${data.img})` }}
               >
-                <div className="absolute inset-0 bg-[#6A9AB0] bg-opacity-50"></div>
+                <div className="absolute inset-0 bg-[#6A9AB0] bg-opacity-40"></div>
                 <div className="lg:container text-center flex flex-col justify-center items-center w-full h-full relative z-10">
                   <h1 className="text-[40px] sm:text-[30px] xs:text-[25px] md:text-[35px] lg:text-[45px] xl:text-[50px] text-white font-semibold font-body3 mb-4 px-5">
                     {data.title}

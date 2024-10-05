@@ -131,44 +131,9 @@ const HeaderBottom = () => {
         <Flex className="flex flex-col lg:flex-row items-start lg:items-center justify-between w-full px-4 lg:pb-0 h-full">
           {/* Menu Button */}
           <div className="flex h-14 cursor-pointer items-center gap-2 text-lightText focus:bg-transparent">
-            <button onClick={() => setShow(!show)} className="bg-white transition-all py-3 px-3 rounded-2xl border shadow-md hover:border-gray-400 hover:rounded-md flex items-center gap-3 group hover:scale-105 duration-300">
-              <MdMenuOpen className="w-5 h-5 text-black group-hover:animate-pulse" />
-            </button>
-            <div className=" text-black text-sm ml-2"> 
-              {"Shop by Category".split("").map((char, index) => (
-                <span key={`char-${index}`} className={`char${index + 1}`}>{char === " " ? "\u00A0" : char}</span>
-              ))}
-            </div>
-            {show && (
-              <motion.ul
-                initial={{ y: 30, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5 }}
-                className="absolute top-20 bg-white border text-center z-40 text-gray-700 w-auto h-auto p-4 pb-6"
-              >
-                {speciCateg && speciCateg.length > 0 ? (
-                  speciCateg.map((item) => (
-                    <li key={item.id} className="dropdown px-4 py-1 font-body3 font-semibold md:text-sm xs:text-lg  border-b-[1px] border-b-gray-400 hover:border-b-black hover:text-black duration-300 cursor-pointer">
-                      {item.name}
-                      <div className="dropdown-content text-center bg-gray-300  w-full py-4 text-sm">
-                        {item.children && item.children.length > 0 ? (
-                          item.children.map((child,index) => (
-                            <div key={index} onClick={() => handleCategoryClick(item, child)}>
-                              <p className="p-1 font-body2 md:text-sm xs:text-sm hover:text-green-700 hover:bg-white " key={child.id}>{child.name}</p>
-                              <hr />
-                            </div>
-                          ))
-                        ) : (
-                          <p>No subcategories</p>
-                        )}
-                      </div>
-                    </li>
-                  ))
-                ) : (
-                  <li className="px-4 py-1">No categories available</li>
-                )}
-              </motion.ul>
-            )}
+           
+          
+            
           </div>
 
           {/* Search Bar */}
@@ -239,7 +204,7 @@ const HeaderBottom = () => {
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5 }}
-                className="absolute top-20 right-1 z-30 bg-green-300 text-xl text-center font-body2 text-black w-44 h-auto p-4 pb-6"
+                className="absolute top-20 right-1 z-30 bg-white text-md text-center font-body2 text-black w-44 h-auto p-4 pb-6"
               >
                 {isAuthenticated ? (
                   <>

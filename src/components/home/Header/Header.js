@@ -81,14 +81,14 @@ const handlePincodeSubmit = async () => {
 
       {pincodePopup && (
         <div className="fixed inset-0 bg-[#F0FDEE] bg-opacity-60 flex justify-center items-center">
-          <div className="bg-green-600 p-4 rounded-lg sm:w-96 md:w-1/2 lg:w-1/3 xl:w-1/4">
+          <div className="bg-white border p-10 rounded-lg sm:w-96 md:w-1/2 lg:w-1/3 xl:w-1/4">
             <div className="flex justify-between items-center mb-4">
-              <input type="text" id={pincode} placeholder="Enter your delivery pin code" value={pincode} onChange={(e) => setPincode(e.target.value)} className="p-2 w-full" />
+              <input type="text" id={pincode} placeholder="Enter your delivery pin code" value={pincode} onChange={(e) => setPincode(e.target.value)} className="p-2 w-full border" />
             </div>
-            <button onClick={handlePincodeSubmit} className="bg-white text-primeColor font-semibold p-2 rounded w-full hover:bg-gray-300">Check Servicability</button>
-            <button onClick={() => setPincodePopup(false)} className="text-white flex items-center justify-center p-2 font-medium hover:text-primeColor">Back <span>👈🏻</span></button>
+            <button onClick={handlePincodeSubmit} className="bg-primeColor border text-white font-semibold p-2 rounded w-full hover:bg-black hover:text-white">Check Availability</button>
+            <button onClick={() => setPincodePopup(false)} className="text-gray-400 flex items-center justify-center p-2 font-medium hover:text-primeColor">Back <span>👈🏻</span></button>
             {serviceable && (
-              <p className="text-white mt-4 font-medium text-center">
+              <p className="text-primeColor mt-4 font-medium text-center">
                 {serviceable.active ? "Delivery is available in your location." : "No delivery in your area. Coming soon!"}
               </p>
             )}
@@ -113,12 +113,12 @@ const handlePincodeSubmit = async () => {
 
               {showMenu && (
                 <ul className="hidden md:flex flex-row lg:gap-4">
-                  <li className={`hover:text-[#6A9AB0] px-3 py-1 rounded-3xl  hover:rounded-none font-body3 mr-3 lg:text-md md:text-md items-center font-normal text-primeColor duration-500 hover:translate-y-1 ${location.pathname === "/" || location.pathname === "/home" ? "text-[#6A9AB0] font-extrabold" : ""}`}>
+                  <li className={` px-3 py-1 rounded-3xl  hover:rounded-none font-body3 mr-3 lg:text-md md:text-md items-center font-normal text-primeColor duration-500 hover:text-black ${location.pathname === "/" || location.pathname === "/home" ? "text-[#6A9AB0] font-extrabold" : ""}`}>
                     <Link to="/"><p>Home </p>
                     </Link>
 
                   </li>
-                  <li className={`hover:text-[#6A9AB0] px-3 py-1  rounded-3xl hover:rounded-none font-body3 mr-3 lg:text-md md:text-md items-center text-primeColor font-semibold  duration-500 hover:translate-y-1 ${location.pathname === "/shop" ? "text-[#6A9AB0] font-extrabold" : ""}`}>
+                  <li className={` px-3 py-1  rounded-3xl hover:rounded-none font-body3 mr-3 lg:text-md md:text-md items-center text-primeColor font-semibold  duration-500 hover:text-black ${location.pathname === "/shop" ? "text-[#6A9AB0] font-extrabold" : ""}`}>
                     <Link to="/shop">
                       <p>Store </p>
                     </Link>
@@ -164,13 +164,13 @@ const handlePincodeSubmit = async () => {
 
                     </div>
                   </li> */}
-                  <li className={`hover:text-[#6A9AB0] px-3 py-1 rounded-3xl hover:rounded-none font-body3 mr-3  lg:text-md md:text-md items-center text-primeColor  font-semibold  duration-500 hover:translate-y-1 ${location.pathname === "/about" ? "text-[#6A9AB0] font-extrabold" : ""}`}>
+                  <li className={` px-3 py-1 rounded-3xl hover:rounded-none font-body3 mr-3  lg:text-md md:text-md items-center text-primeColor  font-semibold  duration-500 hover:text-black ${location.pathname === "/about" ? "text-[#6A9AB0] font-extrabold" : ""}`}>
                     <NavLink to="/about" state={{ data: location.pathname.split("/")[1] || null }}>
                       <p >About </p>
                     </NavLink>
 
                   </li>
-                  <li className={`hover:text-[#6A9AB0] px-3 py-1 rounded-3xl hover:rounded-none font-body3 mr-3  lg:text-md md:text-md items-center text-primeColor  font-semibold  duration-500 hover:translate-y-1 ${location.pathname === "/contact" ? "text-[#6A9AB0] font-extrabold" : ""}`}>
+                  <li className={` px-3 py-1 rounded-3xl hover:rounded-none font-body3 mr-3  lg:text-md md:text-md items-center text-primeColor  font-semibold  duration-500 hover:text-black ${location.pathname === "/contact" ? "text-[#6A9AB0] font-extrabold" : ""}`}>
                     <NavLink to="/contact" state={{ data: location.pathname.split("/")[1] || null }}>
                       <p>Contact </p>
                     </NavLink>
@@ -187,68 +187,28 @@ const handlePincodeSubmit = async () => {
                     className="w-[80%] h-full relative"
                   >
                     <div className="w-full h-full bg-white p-6">
-                      <img src={logo1} alt="logo" className="w-32 pb-7" />
+                     
                       <ul className="text-gray-200 flex flex-col gap-2">
-                        <li className={`hover:text-red-500 px-3 py-1 rounded-3xl  hover:rounded-none font-body3 mr-3 lg:text-xl md:text-md items-center font-semibold text-primeColor duration-500 hover:translate-y-1 ${location.pathname === "/" || location.pathname === "/home" ? "text-red-500 font-extrabold" : ""}`}>
+                        <li className={`hover:text-black px-3 py-1 rounded-3xl  hover:rounded-none font-body3 mr-3 lg:text-xl md:text-md items-center font-semibold text-primeColor duration-500 hover:translate-y-1 ${location.pathname === "/" || location.pathname === "/home" ? "text-black font-extrabold" : ""}`}>
                           <Link to="/"><p>Home </p>
                           </Link>
 
                         </li>
-                        <li className={`hover:text-red-500 px-3 py-1  rounded-3xl hover:rounded-none font-body3 mr-3 lg:text-xl md:text-md items-center text-primeColor font-semibold  duration-500 hover:translate-y-1 ${location.pathname === "/shop" ? "text-red-500 font-extrabold" : ""}`}>
+                        <li className={`hover:text-black px-3 py-1  rounded-3xl hover:rounded-none font-body3 mr-3 lg:text-xl md:text-md items-center text-primeColor font-semibold  duration-500 hover:translate-y-1 ${location.pathname === "/shop" ? "text-black font-extrabold" : ""}`}>
                           <Link to="/shop">
                             <p>Shop </p>
                           </Link>
 
                         </li>
                   
-                        <li className={`hover:text-red-500 px-3 py-1 rounded-3xl hover:rounded-none relative group font-body3 mr-3 lg:text-lg md:text-sm items-center cursor-pointer  duration-500 hover:translate-y-1 ${location.pathname.includes("meal-plans") ? "text-red-500 font-extrabold" : ""}`}>
-                          <p className={`flex font-body2 lg:text-xl md:text-md items-center text-primeColor font-semibold duration-500 hover:text-red-500 ${location.pathname.includes("WeightsLoss") || location.pathname.includes("weightGain") || location.pathname.includes("teens") || location.pathname.includes("adults") ? "text-red-500 font-extrabold" : ""} `} onMouseEnter={() => { setShowHealthyDiets(false); setShowDietPlanForAge(false); setShowSPecialCateg(false); }} >Meal Plans<span className="group-hover:hidden"><IoMdArrowDropdown /></span><span className="hidden group-hover:inline"><IoMdArrowDropup /></span></p>
-                          <div ref={dropdownRef} className="absolute z-0 hidden group-hover:block w-[150px] rounded-md bg-white py-2 text-black shadow-md">
-                            <div className="relative group">
-                              <p className="flex items-center justify-center py-1 cursor-pointer lg:text-xl md:text-md font-semibold hover:text-red-500 text-center hover:bg-gray-200" onMouseEnter={() => { setShowHealthyDiets(true); setShowDietPlanForAge(false); setShowSPecialCateg(false); }}>Healthy Diets</p>
-                              {showHealthyDiets && (
-                                <div className="absolute z-0 block w-[70%] rounded-md bg-white py-2 text-black shadow-md left-full top-0 text-center">
-                                  <NavLink to="/WeightsLoss" className="block py-1 px-1 lg:text-xl md:text-md  hover:text-red-500 font-semibold hover:bg-gray-200">Weight Loss</NavLink>
-                                  <NavLink to="/weightsGain" className="block py-1 px-1 lg:text-xl md:text-md hover:text-red-500 font-semibold hover:bg-gray-200">Weight Gain</NavLink>
-                                </div>
-                              )}
-                            </div>
-                            <div className="relative group">
-                              <p className="flex items-center justify-center py-1 cursor-pointer lg:text-xl md:text-md font-semibold  hover:text-red-500 text-center hover:bg-gray-200" onMouseEnter={() => { setShowDietPlanForAge(true); setShowHealthyDiets(false); setShowSPecialCateg(false); }}>Diet Plan For Age</p>
-                              {showDietPlanForAge && (
-                                <div className="absolute z-0 block w-[70%] rounded-md bg-white py-2 text-black shadow-md left-full top-0 text-center">
-                                  <NavLink to="/weaning" className="block py-1 lg:text-xl md:text-md hover:text-red-500 hover:bg-gray-200 font-semibold">Weaning</NavLink>
-                                  <NavLink to="/schoolgoing" className="block py-1 lg:text-xl md:text-md hover:text-red-500 hover:bg-gray-200 font-semibold">School going</NavLink>
-                                  <NavLink to="/adults" className="block py-1 lg:text-xl md:text-md hover:text-red-500 hover:bg-gray-200 font-semibold">Adults</NavLink>
-                                  <NavLink to="/geriatric" className="block py-1 lg:text-xl md:text-md hover:text-red-500 hover:bg-gray-200 font-semibold">Geriatric</NavLink>
-                                </div>
-                              )}
-                            </div>
-                            <div className="relative group">
-                              <NavLink className="flex items-center lg:text-xl md:text-md justify-center py-1  font-semibold hover:text-red-500 text-center hover:bg-gray-200" onMouseEnter={() => { setShowSPecialCateg(true); setShowDietPlanForAge(false); setShowHealthyDiets(false); }}>Special Conditions</NavLink>
-                              {
-                                showSpecialCateg && (
-                                  <div className="absolute z-0 block w-[100%] rounded-md bg-white py-2 text-black shadow-md left-0 top-10 text-center">
-                                    <NavLink to="/expectantmothers" className="block py-1 px-1 lg:text-xl hover:bg-gray-200 md:text-md hover:text-red-500 font-semibold ">Expectant Mothers</NavLink>
-                                    <NavLink to="/lactatingmothers" className="block py-1  px-1 lg:text-xl md:text-md hover:bg-gray-200 hover:text-red-500 font-semibold ">Lactating Mothers</NavLink>
-                                    <NavLink to="/pcod" className="block py-1 px-1 hover:text-red-500 font-semibold hover:bg-gray-200">PCOD</NavLink>
-                                    <NavLink to="/diabetes-millets-diet" className="block py-1 px-1 lg:text-xl md:text-md hover:bg-gray-200 hover:text-red-500 font-semibold ">Diabetes Mellitus Diet</NavLink>
-                                    <NavLink to="/gluten-free-diet" className="block py-1 px-1 lg:text-xl md:text-md hover:bg-gray-200 hover:text-red-500 font-semibold ">Gluten Free Diet</NavLink>
-                                    <NavLink to="/lactose-introlerent" className="block py-1 px-1 lg:text-xl md:text-md hover:bg-gray-200 hover:text-red-500 font-semibold ">Lactose Introlerent</NavLink>
-                                  </div>
-                                )
-                              }
-                            </div>
-
-                          </div>
-                        </li>
-                        <li className={`hover:text-red-500 px-3 py-1 rounded-3xl hover:rounded-none font-body3 mr-3  lg:text-xl md:text-md items-center text-primeColor  font-semibold  duration-500 hover:translate-y-1 ${location.pathname === "/about" ? "text-red-500 font-extrabold" : ""}`}>
+                       
+                        <li className={`hover:text-black px-3 py-1 rounded-3xl hover:rounded-none font-body3 mr-3  lg:text-xl md:text-md items-center text-primeColor  font-semibold  duration-500 hover:translate-y-1 ${location.pathname === "/about" ? "text-red-500 font-extrabold" : ""}`}>
                           <NavLink to="/about" state={{ data: location.pathname.split("/")[1] || null }}>
                             <p >About </p>
                           </NavLink>
 
                         </li>
-                        <li className={`hover:text-red-500 px-3 py-1 rounded-3xl hover:rounded-none font-body3 mr-3  lg:text-xl md:text-md items-center text-primeColor  font-semibold  duration-500 hover:translate-y-1 ${location.pathname === "/contact" ? "text-red-500 font-extrabold" : ""}`}>
+                        <li className={`hover:text-black px-3 py-1 rounded-3xl hover:rounded-none font-body3 mr-3  lg:text-xl md:text-md items-center text-primeColor  font-semibold  duration-500 hover:translate-y-1 ${location.pathname === "/contact" ? "text-red-500 font-extrabold" : ""}`}>
                           <NavLink to="/contact" state={{ data: location.pathname.split("/")[1] || null }}>
                             <p>Contact </p>
                           </NavLink>

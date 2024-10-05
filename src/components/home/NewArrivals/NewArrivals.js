@@ -167,7 +167,7 @@ const NewArrivals = () => {
             const selectedVariant = selectedVariants[product.id] || product.quantity_variants[0];
             return (
               <div key={product.id} className="p-2 pb-10" data-aos="fade-up">
-                <div className="relative overflow-hidden group h-full hover:shadow-xl shadow-md border">
+                <div className="relative overflow-hidden group h-full rounded-lg hover:shadow-xl shadow-md border">
                   <div className='flex flex-col items-center max-w-full max-h-full p-4 '>
                     <div className="relative object-cover overflow-hidden w-[250px] h-[250px]" onClick={() => handleView(product.id)}>
                       <img
@@ -176,7 +176,7 @@ const NewArrivals = () => {
                       />
                     </div>
                   </div>
-                  <div className="py-1 flex flex-col gap-1 h-full border-[1px] border-t-0 px-4 bg-[#fff] ">
+                  <div className="py-1 flex flex-col gap-1 h-full px-4 bg-[#fff] ">
                     <div className="flex flex-col items-center justify-between font-titleFont ">
                       <h2 className="md:text-xl xl:text-md lg:text-xl xs:text-[15px] sm:text-[15px] font-body2 text-gray-800 font-normal">
                         {product.name}

@@ -257,84 +257,25 @@ const Shop = () => {
                   <h1 className="text-center font-medium underline">Filter by :</h1>
                   <div className='my-4'>
                     <h3 className="font-bold text-gray-600">CATEGORIES</h3>
-                    <select onChange={handleCategoryChange} className="p-2 outline-none bg-yellow-50 font-medium rounded w-full">
+                    <select onChange={handleCategoryChange} className="p-2 outline-none border font-medium rounded w-full">
                       <option value="">All Categories</option>
                       {shopDetails?.categories?.map(category => (
-                        <option className="uppercase font-medium bg-primeColor text-white" key={category.id} value={category.id}>{category.name}</option>
+                        <option className="uppercase font-medium bg-white text-black" key={category.id} value={category.id}>{category.name}</option>
                       ))}
                     </select>
                     <hr />
                   </div>
-                  <div className='my-4'>
-                    <h3 className="font-bold text-gray-600">COMBO'S</h3>
-                    <select onChange={handleComboChange} className="p-2 outline-none bg-yellow-50 font-medium rounded w-full">
-                      <option className="font-medium bg-primeColor text-white" value="">All Combo</option>
-                      {specialCategories?.splcategories?.find(cat => cat.name === "General Combo")?.children?.map(combo => (
-                        <option className="font-medium bg-primeColor text-white" key={combo.id} value={combo.name}>{combo.name}</option>
-                      ))}
-                    </select>
-                    <hr />
-                  </div>
-                  <div className='my-4'>
-                    <h3 className="font-bold text-gray-600">DIET PLAN FOR AGE</h3>
-                    <select onChange={handleAgeChange} className="p-2 outline-none bg-yellow-50 font-medium rounded w-full">
-                      <option className="font-medium bg-primeColor text-white" value="">All Ages</option>
-                      <option className="font-medium bg-primeColor text-white" value="School Going">School Going</option>
-                      <option className="font-medium bg-primeColor text-white" value="Adults">Adults</option>
-                      <option className="font-medium bg-primeColor text-white" value="Geriatric">Geriatric</option>
-                      <option className="font-medium bg-primeColor text-white" value="Weaning">Weaning</option>
-                    </select>
-                    <hr />
-                  </div>
-                  <div className='my-4'>
-                    <h3 className="font-bold text-gray-600">GENERAL COMBO</h3>
-                    <select onChange={handleAgeChange} className="p-2 outline-none bg-yellow-50 font-medium rounded w-full">
-                      <option className="font-medium bg-primeColor text-white" value="">All General Combo's</option>
-                      {specialCategories?.splcategories?.find(cat => cat.name === "General Combo")?.children?.map(combo => (
-                        <option className="font-medium bg-primeColor text-white" key={combo.id} value={combo.name}>{combo.name}</option>
-                      ))}
-                    </select>
-                    <hr />
-                  </div>
-                  <div className='my-4'>
-                    <h3 className="font-bold text-gray-600">DIET FOR SPECIAL CONDITIONS</h3>
-                    <select onChange={handleDietChange} className="p-2 outline-none bg-yellow-50 font-medium rounded w-full">
-                      <option className="font-medium bg-primeColor text-white" value="">All Diets</option>
-                      {specialCategories?.splcategories?.find(cat => cat.name === "Diet for Special Conditions")?.children?.map(diet => (
-                        <option className="font-medium bg-primeColor text-white" key={diet.id} value={diet.name}>{diet.name}</option>
-                      ))}
-                    </select>
-                    <hr />
-                  </div>
-                  <div className='my-4'>
-                    <h3 className="font-bold text-gray-600">Healthy Diet</h3>
-                    <select onChange={handleDietChange} className="p-2 outline-none bg-yellow-50 font-medium rounded w-full">
-                      <option className="font-medium bg-primeColor text-white" value="">All Healthy Diets</option>
-                      <option className="font-medium bg-primeColor text-white" value="Weight Loss Diet">Weight Loss Diet</option>
-                      <option className="font-medium bg-primeColor text-white" value="Weight Gain Diet">Weight Gain Diet</option>
-                      <option className="font-medium bg-primeColor text-white" value="High Calcium Diet">Workout</option>
-                    </select>
-                    <hr />
-                  </div>
-                  <div className='my-4'>
-                    <h3 className="font-bold text-gray-600">SPECIAL CATEGORIES</h3>
-                    <select onChange={handleSpecialCategoryChange} className="p-2 outline-none bg-yellow-50 font-medium rounded w-full">
-                      <option className="font-medium bg-primeColor text-white" value="">All Special Categories</option>
-                      {specialCategories?.splcategories?.find(cat => cat.name === "Special Categories")?.children?.map(special => (
-                        <option className="font-medium bg-primeColor text-white" key={special.id} value={special.name}>{special.name}</option>
-                      ))}
-                    </select>
-                    <hr />
-                  </div>
+                
+                 
                   <div className='my-4'>
                     <h3 className="font-bold text-gray-600">PRICE RANGE</h3>
-                    <select onChange={handlePriceRangeChange} className="p-2 outline-none bg-yellow-50 font-medium rounded w-full">
-                      <option className="font-medium bg-primeColor text-white" value="">All Prices</option>
-                      <option className="font-medium bg-primeColor text-white" value="0-100">0-100</option>
-                      <option className="font-medium bg-primeColor text-white" value="100-300">100-300</option>
-                      <option className="font-medium bg-primeColor text-white" value="300-600">300-600</option>
-                      <option className="font-medium bg-primeColor text-white" value="600-1000">600-1000</option>
-                      <option className="font-medium bg-primeColor text-white" value="1000-10000">1000-10000</option>
+                    <select onChange={handlePriceRangeChange} className="p-2 outline-none bg-white border bg-opacity-20 font-medium rounded w-full">
+                      <option className="font-medium bg-white text-black" value="">All Prices</option>
+                      <option className="font-medium bg-white text-black" value="0-100">0-100</option>
+                      <option className="font-medium bg-white text-black" value="100-300">100-300</option>
+                      <option className="font-medium bg-white text-black" value="300-600">300-600</option>
+                      <option className="font-medium bg-white text-black" value="600-1000">600-1000</option>
+                      <option className="font-medium bg-white text-black" value="1000-10000">1000-10000</option>
                     </select>
                     <hr />
                   </div>
@@ -342,15 +283,15 @@ const Shop = () => {
                     <h3 className="font-bold text-gray-600">SEARCH PRODUCTS BY</h3>
                     <input
                       type="text"
-                      placeholder="Name,Id,Categories,Price..."
+                      placeholder="Name, Id, Categories, Price..."
                       value={searchTerm}
                       onChange={handleSearchChange}
-                      className="p-2 outline-none bg-yellow-50 font-semibold rounded w-full mb-2"
+                      className="p-2 outline-none bg-white border font-semibold rounded w-full mb-2"
                     />
-                    <hr />
+                   
                   </div>
                   <div>
-                    <button onClick={() => setCurrentPage(0)} className="p-2 bg-primeColor text-white font-medium hover:bg-green-900 rounded w-full">Search</button>
+                    <button onClick={() => setCurrentPage(0)} className="p-2 bg-primeColor text-white font-medium hover:bg-black rounded w-full">Search</button>
                   </div>
                 </div>
               </div>
@@ -359,25 +300,25 @@ const Shop = () => {
                   {shopDetails && filterProducts(shopDetails.products)?.slice(offset, offset + itemsPerPage)?.map((product, index) => {
                     const selectedVariant = selectedVariants[product.id] || product.quantity_variants[0];
                     return (
-                      <div key={product.id} className="p-2">
-                        <div className="relative overflow-hidden group w-full h-full hover:shadow-slate-700 shadow-md">
-                          <div className={`flex flex-col items-center justify-center bg-gray-100 group-hover:bg-white max-w-full max-h-full`}>
-                            <div className="relative w-full h-full" onClick={() => handleView(product.id)}>
-                              <Image className="md:w-[230px] md:h-[230px] cursor-pointer xs:w-[140px] xs:h-[140px] object-contain" imgSrc={`${baseURL}${product.image}`} />
+                      <div key={product.id} className="p-2 border hover:shadow-lg rounded-lg">
+                        <div className="relative overflow-hidden group w-full h-full ">
+                          <div className={`flex flex-col items-center justify-center group-hover:bg-white max-w-full max-h-full`}>
+                            <div className="md:w-[230px] md:h-[230px] xs:w-[140px] xs:h-[140px] overflow-hidden relative w-full h-full my-2 mx-4" onClick={() => handleView(product.id)}>
+                              <Image className=" cursor-pointer object-contain group-hover:scale-110 ease-in-out duration-500" imgSrc={`${baseURL}${product.image}`} />
                             </div>
                           </div>
-                          <div className="py-1 flex flex-col h-auto w-full items-center justify-between gap-1 border-[1px] border-t-0 px-2 bg-white">
+                          <div className="py-1 flex flex-col h-auto w-full items-center justify-between gap-1  px-2 bg-white">
                             <div className="flex flex-col items-center justify-between font-titleFont ">
-                              <h2 className="md:text-xl xl:text-xl lg:text-xl xs:text-[10px] text-center sm:text-[10px] text-primeColor font-medium">
+                              <h2 className=" h-20 md:text-xl xl:text-xl lg:text-xl xs:text-[10px] text-center sm:text-[10px] text-primeColor font-medium">
                                 {product.name}
                               </h2>
                               <div className="flex items-center justify-between w-full">
-                                <div className="flex items-center">
-                                  <button onClick={() => handleDecrease(product)} className="px-1 py-1 text-xs xs:text-xs sm:text-sm md:text-base lg:text-lg xl:text-lg bg-gray-300 hover:bg-red-400 text-black hover:text-white">
+                                <div className="flex items-center border p-2">
+                                  <button onClick={() => handleDecrease(product)} className="px-1 py-1 text-xs xs:text-xs sm:text-sm md:text-base lg:text-lg xl:text-lg bg-gray-300 hover:bg-primeColor text-black hover:text-white">
                                     <BsDash />
                                   </button>
-                                  <span className="px-1 text-xs xs:text-xs sm:text-sm md:text-base lg:text-sm xl:text-sm bg-gray-100">{getCartQuantity(product.id)}</span>
-                                  <button onClick={() => handleIncrease(product)} className="px-1 py-1 text-xs xs:text-xs sm:text-sm md:text-base lg:text-lg xl:text-lg bg-gray-300 hover:bg-green-400 text-black hover:text-white">
+                                  <span className="px-1 text-xs xs:text-xs sm:text-sm md:text-base lg:text-sm xl:text-sm ">{getCartQuantity(product.id)}</span>
+                                  <button onClick={() => handleIncrease(product)} className="px-1 py-1 text-xs xs:text-xs sm:text-sm md:text-base lg:text-lg xl:text-lg bg-gray-300 hover:bg-primeColor text-black hover:text-white">
                                     <BsPlus />
                                   </button>
                                 </div>
@@ -386,22 +327,22 @@ const Shop = () => {
                                     <FaRupeeSign />
                                   </span>
                                   <span className="line-through text-gray-600">{(selectedVariants[product.id]?.price || product.price) + 100}</span>
-                                  <span className="ml-1">{selectedVariants[product.id]?.price || product.price}</span>
+                                  <span className="ml-2">{selectedVariants[product.id]?.price || product.price}</span>
                                 </div>
                               </div>
                             </div>
 
                             <div className="flex items-center justify-between w-full">
-                              <button onClick={() => handleBuy(product)} className="order-2 ml-2 py-1 hover:bg-primeColor text-black px-2 font-medium xs:text-[13px] sm:text-[15px] sml:text-[17px] md:text-[20px] lg:text-[20px] xl:text-[20px] hover:text-white rounded-2xl hover:rounded-none  hover:translate-y-1 transition-transform duration-500">
+                              <button onClick={() => handleBuy(product)} className="order-1 ml-2 py-2 hover:bg-primeColor border  text-black px-2 font-medium xs:text-[13px] sm:text-[15px] sml:text-[17px] md:text-[20px] lg:text-[20px] xl:text-[20px] hover:text-white  hover:rounded-none  transition-transform duration-500">
                                 <BsFillCartCheckFill />
                               </button>
-                              <select className="order-1 mt-1 hover:bg-primeColor font-medium font-body2 text-black hover:text-white xl:text-[15px] lg:text-[15px] md:text-[15px] xs:text-[15px] sm:text-[15px]" onChange={(e) => handleVariantChange(product.id, JSON.parse(e.target.value))}>
+                              <select className="order-2 mt-1 border p-2 hover:bg-primeColor font-medium font-body2 text-black hover:text-white xl:text-[15px] lg:text-[15px] md:text-[15px] xs:text-[15px] sm:text-[15px]" onChange={(e) => handleVariantChange(product.id, JSON.parse(e.target.value))}>
                                 {product.quantity_variants.map((variant, idx) => (
-                                  <option key={idx} value={JSON.stringify(variant)} className="text-black bg-white font-medium">{variant.volume}{variant.unit}</option>
+                                  <option key={idx} value={JSON.stringify(variant)} className="text-black bg-white font-medium ">{variant.volume}{variant.unit}</option>
                                 ))}
                               </select>
                             </div>
-                            <div className={`md:text-lg lg:text-xl sm:text-sm font-normal text-center xs:text-[10px] ${selectedVariant?.in_stock <= 0 ? 'text-red-500' : selectedVariant?.in_stock > 0 && selectedVariant?.in_stock <= 10 ? 'text-yellow-500' : 'text-green-500'}`}>
+                            <div className={`md:text-lg lg:text-sm sm:text-sm font-normal text-center xs:text-[10px] ${selectedVariant?.in_stock <= 0 ? 'text-red-500' : selectedVariant?.in_stock > 0 && selectedVariant?.in_stock <= 10 ? 'text-yellow-500' : 'text-green-500'}`}>
                               {selectedVariant?.in_stock <= 0 ? "Out of Stock" : selectedVariant?.in_stock > 0 && selectedVariant?.in_stock <= 10 ? `Only ${selectedVariant?.in_stock} items left` : selectedVariant ? `${selectedVariant.in_stock} left in stock` : "Stock information not available"}
                             </div>
                           </div>

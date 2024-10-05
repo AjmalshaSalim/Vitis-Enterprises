@@ -165,7 +165,7 @@ const Cart = () => {
       <Header />
       <HeaderBottom />
       <ToastContainer />
-      <div className="bg-[#EFFDEC] font-body3">
+      <div className="bg-white font-body3">
         <div className="lg:container mx-auto px-4">
           <div className="py-4">
             <Breadcrumbs title="My Cart" />
@@ -184,7 +184,7 @@ const Cart = () => {
             ) : (
               <div className="flex flex-col md:flex-row items-start justify-center gap-4">
                 <div className="w-full md:w-3/4 bg-white mb-10 rounded-lg">
-                  <div className="bg-[#bbe6b9] py-4">
+                  <div className="bg-primeColor bg-opacity-20 py-4">
                     <h1 className="md:text-2xl font-bold text-center">You have<span className="text-red-500"> {fetchedCartItems.length || 0}</span> items in your cart</h1>
                   </div>
                   {fetchedCartItems?.map((item, index) => (
@@ -209,7 +209,7 @@ const Cart = () => {
                           </div>
                           <div className="md:w-1/2 flex flex-col items-center justify-center xs:mt-3">   
                             <div> 
-                              <button onClick={() => handleDecrease(item)} className="px-2 py-2 text-lg bg-gray-500 hover:bg-red-400 text-white "> <span><FaMinus /></span> </button>
+                              <button onClick={() => handleDecrease(item)} className="px-2 py-2 text-lg bg-gray-500 text-white "> <span><FaMinus /></span> </button>
                               <span className="px-4 text-lg bg-gray-200">{item.quantity}</span>
                               <button onClick={() => handleIncrease(item)} className="px-2 py-2 text-lg bg-gray-500 hover:bg-green-400 text-white "><span><FaPlus /></span></button>
                             </div>
@@ -260,36 +260,36 @@ const Cart = () => {
                 </Link>
               </div>
             ) : (
-              <div className="flex flex-col md:flex-row items-start justify-center gap-4">
-                <div className="w-full md:w-3/4 bg-white mb-10 rounded-lg">
-                  <div className="bg-[#bbe6b9] py-4">
+              <div className="flex flex-col md:flex-row items-start justify-center gap-4 ">
+                <div className="w-full md:w-3/4 bg-white mb-10 rounded-lg border">
+                  <div className="bg-primeColor bg-opacity-20 py-4">
                     <h1 className="md:text-2xl font-bold text-center">You have<span className="text-red-500"> {cart.cartItems.length || 0}</span> items in your cart</h1>
                   </div>
                   {cart.cartItems?.map((cartItem, index) => (
                     <React.Fragment key={cartItem.id}>
-                      <div className="flex flex-col items-center hover:bg-red-50 justify-center md:flex-row gap-4">
+                      <div className="flex flex-col items-center justify-center md:flex-row gap-4">
                         <div className="md:w-full flex md:flex-row xs:flex-col items-center">
-                          <div className="flex items-center justify-center" onClick={() => handleView(cartItem.id)}>
+                          <div className="flex items-center justify-center pl-4" onClick={() => handleView(cartItem.id)}>
                             <img className="w-[200px] object-contain cursor-pointer" src={`${baseURL}${cartItem.image}`} alt="Product img" />
                           </div>
-                          <div className="flex flex-col items-center justify-center md:w-1/2 xs:w-full space-y-1">
+                          <div className="flex mb-4 flex-col items-center justify-center md:w-1/2 xs:w-full space-y-1">
                             <p className="hover:text-gray-500 md:text-xl xs:text-sm text-gray-500"><span className="md:text-xl xs:text-lg font-normal text-primeColor">{cartItem.name}</span></p>
                             <p className="hover:text-gray-500 md:text-xl xs:text-sm text-gray-500">Category : <span className="font-normal text-xl text-primeColor">{cartItem.category[0]}</span></p>
-                            <p className="hover:text-gray-500 md:text-xl xs:text-sm text-gray-500">Quantity : <select className="order-1 mt-1 hover:bg-gray-400 font-normal font-body2 text-black hover:text-white">
+                            <p className="hover:text-gray-500 md:text-xl xs:text-sm text-gray-500">Quantity : <select className="order-1 mt-1 border font-normal font-body2 text-black ">
                               {cartItem.quantity_variants?.map((variant, index) => (
-                                <option key={index} value={`${variant.volume}g`} className="text-black bg-white md:text-xl xs:text-lg font-medium">{`${variant.volume} ${variant.unit}`}</option>
+                                <option key={index} value={`${variant.volume}g`} className="text-black bg-white  md:text-xl xs:text-lg font-medium">{`${variant.volume} ${variant.unit}`}</option>
                               ))}
                             </select></p>
                             <div className={`md:text-lg xs:text-base ${cartItem.in_stock === 0 || (cartItem.in_stock > 0 && cartItem.in_stock < 10) ? 'text-red-500' : 'text-green-500'}`}>
                               {cartItem.in_stock === 0 ? "Out of Stock" : cartItem.in_stock < 10 ? `Only ${cartItem.in_stock} items left` : `${cartItem.in_stock} items in stock`}
                             </div>
-                            <button onClick={() => handleRemoveFromCart(cartItem)} className="text-red-600 hover:text-red-500 md:text-lg xs:text-base">Remove item</button>
+                            <button onClick={() => handleRemoveFromCart(cartItem)} className="bg-red-600 text-white p-2 mb-4 rounded-md hover:bg-red-700 md:text-md xs:text-base">Remove item</button>
                           </div>
                           <div className="md:w-1/2 flex flex-col items-center justify-center xs:mt-3">
-                            <div>
-                              <button onClick={() => handleDecrease(cartItem)} className="px-2 py-2 text-lg bg-gray-500 hover:bg-red-400 text-white "> <span><FaMinus /></span> </button>
-                              <span className="px-4 text-lg bg-gray-200">{cartItem.cartQuantity}</span>
-                              <button onClick={() => handleIncrease(cartItem)} className="px-2 py-2 text-lg bg-gray-500 hover:bg-green-400 text-white "><span><FaPlus /></span></button>
+                            <div className="border p-2">
+                              <button onClick={() => handleDecrease(cartItem)} className="px-2 py-2 text-lg bg-gray-500 hover:bg-primeColor text-white "> <span><FaMinus /></span> </button>
+                              <span className="px-4 text-lg ">{cartItem.cartQuantity}</span>
+                              <button onClick={() => handleIncrease(cartItem)} className="px-2 py-2 text-lg bg-gray-500 hover:bg-primeColor text-white "><span><FaPlus /></span></button>
                             </div>
                             <div className="mt-4 mb-5">
                               <p className="font-semibold flex items-center hover:text-gray-500 md:text-xl xs:text-sm">Price : <span className="mt-[2px]"><MdCurrencyRupee /></span>{cartItem.price}</p>
@@ -308,7 +308,7 @@ const Cart = () => {
                   </div>
                   <div className="flex flex-col items-center">
                     <div onClick={() => setPincodePopup(true)} className="w-full">
-                      <button className="bg-black hover:bg-primeColor font-medium text-white px-full py-2 rounded mt-4 w-full">Proceed to Checkout</button>
+                      <button className="bg-primeColor hover:bg-black font-medium text-white px-full py-2 rounded mt-4 w-full">Proceed to Checkout</button>
                     </div>
                     <div className="flex justify-between items-center py-3 w-full">
                       <button onClick={() => handleClearCart()} className="bg-red-600 py-1 px-2 rounded-md text-white font-medium hover:bg-red-500 ml-2">Clear Cart</button>

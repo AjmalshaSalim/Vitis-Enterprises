@@ -36,6 +36,15 @@ const Orders = lazy(() => import('../pages/Orderhistory/Orders'));
 const ForgotPasswordPage = lazy(() => import('../pages/Account/ForgotPassword'));
 const ShopByCategory = lazy(() => import('../components/SpecialShop/ShopByCategory'));
 
+
+// Admin Routes
+const Dashboard = lazy(() => import('../pages/AdminPages/Dashboard'));
+const ManageUsers = lazy(() => import('../pages/AdminPages/ManageUsers'));
+const ManageProducts = lazy(() => import('../pages/AdminPages/ManageProducts'));
+const ManageOrders = lazy(() => import('../pages/AdminPages/ManageOrders'));
+const ManageBanners = lazy(() => import('../pages/AdminPages/ManageBanners'));
+
+
 export default function MainRoutes() {
     const [showRoutes, setShowRoutes] = useState(false);
 
@@ -64,7 +73,7 @@ export default function MainRoutes() {
             <Routes>
                 <Route element={<PublicRoutes />}>
                     <Route path="/signup" element={<SignUp />} />
-                    <Route path="/signin" element={<SignIn />} />
+                    <Route path="/signin" element={<SignIn />} />                  
                     <Route path="/otppage" element={<OtpPage />} />
                     <Route path='/forgot-password' element={<ForgotPasswordPage />} />
                     <Route path='/forgot-otp' element={<ForgetOtp />} />
@@ -90,6 +99,15 @@ export default function MainRoutes() {
                     <Route path='/checkout' element={<CheckOut />} />
                     <Route path='/orders' element={<Orders />} />
                     <Route path='/ShopByCategory' element={<ShopByCategory />} />
+
+                    {/* Admin Routes */}
+                    <Route path="/admin" element={<Dashboard />} />
+                    <Route path="/manage-users" element={<ManageUsers />} />
+                    <Route path="/manage-products" element={<ManageProducts />} />
+                    <Route path="/manage-orders" element={<ManageOrders />} />
+                    <Route path="/manage-banners" element={<ManageBanners />} />
+
+
                 </Route>
                 <Route path="/" element={<Home />} />
                 <Route path="/home" element={<Home />} />

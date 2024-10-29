@@ -70,8 +70,16 @@ export default function MainRoutes() {
         AOS.refresh();
     }, []);
 
+    const LoadingSpinner = () => {
+        return (
+            <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-white bg-opacity-80 z-50">
+                <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-primeColor"></div>
+            </div>
+        );
+    };
+
     return showRoutes ? (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<LoadingSpinner />}>
             <Routes>
                 <Route element={<PublicRoutes />}>
                     <Route path="/signup" element={<SignUp />} />

@@ -43,6 +43,7 @@ const ManageUsers = lazy(() => import('../pages/AdminPages/ManageUsers'));
 const ManageProducts = lazy(() => import('../pages/AdminPages/ManageProducts'));
 const ManageOrders = lazy(() => import('../pages/AdminPages/ManageOrders'));
 const ManageBanners = lazy(() => import('../pages/AdminPages/ManageBanners'));
+const OutOfStock = lazy(() => import('../pages/AdminPages/OutOfStock'));
 
 
 export default function MainRoutes() {
@@ -106,6 +107,7 @@ export default function MainRoutes() {
                     <Route path="/manage-products" element={<ManageProducts />} />
                     <Route path="/manage-orders" element={<ManageOrders />} />
                     <Route path="/manage-banners" element={<ManageBanners />} />
+                    <Route path="/out-of-stock" element={<OutOfStock />} />
 
 
                 </Route>

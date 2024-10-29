@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaHome, FaUsers, FaBoxes, FaShoppingCart, FaImages, FaSignOutAlt } from 'react-icons/fa';
+import { FaHome, FaUsers, FaBoxes, FaShoppingCart, FaImages, FaSignOutAlt, FaExclamationTriangle } from 'react-icons/fa';
 
 const Sidenav = () => {
   const location = useLocation();
@@ -10,6 +10,7 @@ const Sidenav = () => {
     { path: '/manage-products', icon: <FaBoxes />, label: 'Manage Products' },
     { path: '/manage-orders', icon: <FaShoppingCart />, label: 'Manage Orders' },
     { path: '/manage-banners', icon: <FaImages />, label: 'Manage Banners' },
+    { path: '/out-of-stock', icon: <FaExclamationTriangle />, label: 'Out of Stock' },
   ];
 
   return (

@@ -5,10 +5,10 @@ import { FaUsers, FaBoxes, FaShoppingCart, FaExclamationTriangle } from 'react-i
 const Dashboard = () => {
   // Dummy data for demonstration
   const dashboardData = {
-    totalUsers: 1250,
-    totalProducts: 450,
-    totalOrders: 789,
-    outOfStockProducts: 23
+    totalUsers: 3,
+    totalProducts: 3,
+    totalOrders: 3,
+    outOfStockProducts: 3
   }
 
   const DashboardCard = ({ icon, title, count, color }) => (

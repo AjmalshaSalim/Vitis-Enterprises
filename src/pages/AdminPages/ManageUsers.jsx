@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Sidenav from '../../components/Admin/Sidenav'
-import { FaEdit, FaBan } from 'react-icons/fa'
+import { FaBan } from 'react-icons/fa'
 
 const ManageUsers = () => {
   // Dummy user data
@@ -9,6 +9,21 @@ const ManageUsers = () => {
     { id: 2, name: 'Jane Smith', phone: '987-654-3210', address: '456 Elm St, Town, Country' },
     { id: 3, name: 'Bob Johnson', phone: '555-555-5555', address: '789 Oak St, Village, Country' },
   ]
+
+  const [showConfirmation, setShowConfirmation] = useState(false)
+  const [selectedUser, setSelectedUser] = useState(null)
+
+  const handleBlock = (user) => {
+    setSelectedUser(user)
+    setShowConfirmation(true)
+  }
+
+  const confirmBlock = () => {
+    // Add block user logic here
+    console.log(`Blocking user: ${selectedUser.name}`)
+    setShowConfirmation(false)
+    setSelectedUser(null)
+  }
 
   return (
     <div className="flex">
@@ -32,11 +47,10 @@ const ManageUsers = () => {
                   <td className="py-3 px-4">{user.phone}</td>
                   <td className="py-3 px-4">{user.address}</td>
                   <td className="py-3 px-4">
-                    <button className="bg-primeColor text-white px-3 py-1 rounded hover:bg-opacity-70 mr-2">
-                      <FaEdit className="inline mr-1" />
-                      Edit
-                    </button>
-                    <button className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">
+                    <button 
+                      onClick={() => handleBlock(user)}
+                      className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
+                    >
                       <FaBan className="inline mr-1" />
                       Block
                     </button>
@@ -46,6 +60,30 @@ const ManageUsers = () => {
             </tbody>
           </table>
         </div>
+
+        {/* Confirmation Modal */}
+        {showConfirmation && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              <h2 className="text-xl font-bold mb-4">Confirm Block</h2>
+              <p>Are you sure you want to block {selectedUser.name}?</p>
+              <div className="mt-4 flex justify-end space-x-3">
+                <button
+                  onClick={() => setShowConfirmation(false)}
+                  className="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={confirmBlock}
+                  className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+                >
+                  Confirm
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   )

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaHome, FaUsers, FaBoxes, FaShoppingCart, FaImages } from 'react-icons/fa';
+import { FaHome, FaUsers, FaBoxes, FaShoppingCart, FaImages, FaSignOutAlt } from 'react-icons/fa';
 
 const Sidenav = () => {
   const location = useLocation();
@@ -30,6 +30,15 @@ const Sidenav = () => {
               </Link>
             </li>
           ))}
+          <li className="mt-8">
+            <Link
+              to="/login"
+              className="flex items-center p-2 rounded transition-colors duration-200 border text-white bg-primeColor hover:bg-white hover:text-primeColor"
+            >
+              <span className="mr-3"><FaSignOutAlt /></span>
+              Logout
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>

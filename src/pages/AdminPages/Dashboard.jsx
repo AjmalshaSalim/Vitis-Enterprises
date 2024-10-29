@@ -1,8 +1,11 @@
 import React from 'react'
 import Sidenav from '../../components/Admin/Sidenav'
 import { FaUsers, FaBoxes, FaShoppingCart, FaExclamationTriangle } from 'react-icons/fa'
+import { useNavigate } from 'react-router-dom'
 
 const Dashboard = () => {
+  const navigate = useNavigate()
+
   // Dummy data for demonstration
   const dashboardData = {
     totalUsers: 3,
@@ -11,8 +14,11 @@ const Dashboard = () => {
     outOfStockProducts: 3
   }
 
-  const DashboardCard = ({ icon, title, count, color }) => (
-    <div className={`bg-white p-6 rounded-lg shadow-md ${color}`}>
+  const DashboardCard = ({ icon, title, count, color, path }) => (
+    <div 
+      className={`bg-white p-6 rounded-lg shadow-md ${color} cursor-pointer hover:shadow-lg transition-shadow duration-200`}
+      onClick={() => navigate(path)}
+    >
       <div className="flex items-center">
         <div className="p-3 rounded-full bg-opacity-30 mr-4">
           {icon}
@@ -36,24 +42,28 @@ const Dashboard = () => {
             title="Total Users"
             count={dashboardData.totalUsers}
             color="text-blue-500 border border-gray-200"
+            path="/manage-users"
           />
           <DashboardCard 
             icon={<FaBoxes className="text-green-500 text-3xl" />}
             title="Total Products"
             count={dashboardData.totalProducts}
             color="text-green-500 border border-gray-200"
+            path="/manage-products"
           />
           <DashboardCard 
             icon={<FaShoppingCart className="text-yellow-500 text-3xl" />}
             title="Total Orders"
             count={dashboardData.totalOrders}
             color="text-yellow-500 border border-gray-200"
+            path="/manage-orders"
           />
           <DashboardCard 
             icon={<FaExclamationTriangle className="text-red-500 text-3xl" />}
             title="Out of Stock Products"
             count={dashboardData.outOfStockProducts}
             color="text-red-500 border border-gray-200"
+            path="/out-of-stock"
           />
         </div>
       </div>

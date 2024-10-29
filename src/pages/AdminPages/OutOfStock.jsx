@@ -55,15 +55,15 @@ const OutOfStock = () => {
           </button>
         </div>
         <div className="overflow-x-auto">
-          <table className="min-w-full bg-white">
-            <thead>
+          <table className="min-w-full bg-white overflow-hidden rounded-lg">
+            <thead className='bg-primeColor bg-opacity-50'>
               <tr>
-                <th className="py-2 px-4 border-b">Image</th>
-                <th className="py-2 px-4 border-b">Name</th>
-                <th className="py-2 px-4 border-b">Price</th>
-                <th className="py-2 px-4 border-b">Description</th>
-                <th className="py-2 px-4 border-b">Quantity</th>
-                <th className="py-2 px-4 border-b">Actions</th>
+                <th className="py-3 px-4 text-left border-b">Image</th>
+                <th className="py-3 px-4 text-left border-b">Name</th>
+                <th className="py-3 px-4 text-left border-b">Price</th>
+                <th className="py-3 px-4 text-left border-b">Description</th>
+                <th className="py-3 px-4 text-left border-b">Quantity</th>
+                <th className="py-3 px-4 text-left border-b">Actions</th>
               </tr>
             </thead>
             <tbody>
